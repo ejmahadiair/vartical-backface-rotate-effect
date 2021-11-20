@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Face rotating Card</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .box{
+            width: 300px;
+            height: 350px;
+            margin: 50px auto;
+            position: relative;
+            perspective: 1000px;
+        }
+        .card{
+            width: 100%;
+            height: 100%;
+            transform: rotateX(0);
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .box:hover .card{
+            transform: rotateX(180deg);
+        }
+        .card img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .front-contant{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-sizing: border-box;
+        }
+        .box .front{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+        }
+        .back{
+            width: 100%;
+            height: 100%;
+            background: #015668;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateX(180deg);
+            backface-visibility: hidden;
+        }
+        .back-contant{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
+        .back-contant p{
+            margin-top: 40px;
+            font-size: 12.2px;
+            color: rgb(206, 204, 204);
+        }
+        .back-contant h4{
+            margin-top: 100px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            border-bottom: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="card">
+            <div class="front">
+                <img src="ej.jpg" alt="Ej">
+                <div class="front-contant">
+                    <h2>Ej Mahadi</h2>
+                    <h3>Simple Web designer</h3>
+                </div>
+            </div>
+            <div class="back">
+                <div class="back-contant">
+                    <h3>About Ej Mahadi</h3>
+                    <p>In this time student of Eastern University. Home town Comilla. Now stay in Dhaka.</p>
+                    <h4><a href="#">Explore more</a></h4>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
